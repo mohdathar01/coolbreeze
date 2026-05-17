@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  --theme-teal: #12aeb5;
+  --theme-teal-dark: #078b94;
+  --theme-yellow: #ffd45a;
+  --theme-yellow-dark: #f0bd32;
+  --theme-ink: #26333b;
+  --theme-muted: #687882;
+  --theme-line: #e7eef0;
+  --theme-soft: #f4f8f9;
+  --theme-deep: #24313a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--theme-soft);
+  color: var(--theme-ink);
+  font-family: Barlow, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Site-wide theme bridge for existing Tailwind utility classes. */
+.site-shell {
+  background: var(--theme-soft);
+  color: var(--theme-ink);
+}
+
+.site-shell .bg-slate-950,
+.site-shell .bg-slate-900 {
+  background-color: var(--theme-deep) !important;
+}
+
+.site-shell .bg-slate-100,
+.site-shell .bg-slate-50 {
+  background-color: var(--theme-soft) !important;
+}
+
+.site-shell .text-slate-900,
+.site-shell .text-slate-800 {
+  color: var(--theme-ink) !important;
+}
+
+.site-shell .text-slate-700,
+.site-shell .text-slate-600,
+.site-shell .text-slate-500 {
+  color: var(--theme-muted) !important;
+}
+
+.site-shell .text-sky-700,
+.site-shell .text-sky-600,
+.site-shell .text-sky-500,
+.site-shell .text-sky-400,
+.site-shell .text-sky-300 {
+  color: var(--theme-teal) !important;
+}
+
+.site-shell .bg-sky-600,
+.site-shell .bg-sky-500,
+.site-shell .bg-blue-600,
+.site-shell .bg-blue-700 {
+  background-color: var(--theme-teal) !important;
+}
+
+.site-shell .hover\:bg-sky-600:hover,
+.site-shell .hover\:bg-sky-500:hover,
+.site-shell .hover\:bg-sky-400:hover {
+  background-color: var(--theme-teal-dark) !important;
+}
+
+.site-shell .bg-sky-50 {
+  background-color: #eafafb !important;
+}
+
+.site-shell .border-sky-500\/20,
+.site-shell .border-sky-500\/25,
+.site-shell .border-sky-500\/30,
+.site-shell .border-sky-500\/40,
+.site-shell .border-sky-200,
+.site-shell .border-sky-100 {
+  border-color: rgba(18, 174, 181, 0.24) !important;
+}
+
+.site-shell .hover\:border-sky-200:hover,
+.site-shell .hover\:border-sky-100:hover {
+  border-color: rgba(18, 174, 181, 0.42) !important;
+}
+
+.site-shell .shadow-sky-200,
+.site-shell .shadow-sky-100,
+.site-shell .shadow-sky-50,
+.site-shell .shadow-sky-500\/30,
+.site-shell .shadow-sky-500\/40 {
+  --tw-shadow-color: rgba(18, 174, 181, 0.18) !important;
+}
+
+.site-shell .from-sky-500,
+.site-shell .from-sky-400,
+.site-shell .from-blue-500,
+.site-shell .from-blue-700 {
+  --tw-gradient-from: var(--theme-teal) var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgb(18 174 181 / 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-via), var(--tw-gradient-to) !important;
+}
+
+.site-shell .to-blue-600,
+.site-shell .to-cyan-600,
+.site-shell .to-cyan-500 {
+  --tw-gradient-to: #0b8f99 var(--tw-gradient-to-position) !important;
+}
+
+.site-shell input,
+.site-shell select,
+.site-shell textarea {
+  color: var(--theme-ink);
+}
+
+.scroll-fade-up {
+  opacity: 0;
+  transform: translate3d(0, 34px, 0);
+  transition:
+    opacity 760ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 760ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 220ms ease,
+    background-color 220ms ease,
+    box-shadow 220ms ease;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.scroll-fade-up.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-fade-up {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
