@@ -80,12 +80,13 @@ export default function ServicesPage({ setPage }) {
                       <a href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(`${service.title} book karni hai`)}`} target="_blank" rel="noreferrer" className="flex items-center gap-2 bg-green-500 hover:bg-green-400 text-white px-6 py-3 rounded font-bold transition-all">
                         💬 Book on WhatsApp
                       </a>
-                     <a
-  href={`tel:${PHONE}`}
-  onClick={(e) => {
-    e.preventDefault();
-    trackPhoneCall(`tel:${PHONE}`);
-  }}
+                    <a
+ href={`tel:${PHONE}`}
+ onClick={(e)=>{
+   e.preventDefault();
+   trackPhoneCall(`tel:${PHONE}`);
+ }}
+
   className="flex items-center gap-2 bg-sky-500 hover:bg-sky-400 text-white px-6 py-3 rounded font-bold transition-all"
 >
   📞 Call Us

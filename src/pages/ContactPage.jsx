@@ -37,11 +37,12 @@ export default function ContactPage({ setPage }) {
                   💬 Chat on WhatsApp
                 </a>
                 <a
-                  href={`tel:${PHONE}`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    trackPhoneCall(`tel:${PHONE}`);
-                  }} className="flex items-center gap-3 border-2 border-sky-500/30 text-sky-300 hover:bg-sky-500/10 px-6 py-3 rounded font-bold transition-all">
+ href={`tel:${PHONE}`}
+ onClick={(e) => {
+   e.preventDefault();
+   trackPhoneCall(`tel:${PHONE}`);
+ }}
+ className="flex items-center gap-3 border-2 border-sky-500/30 text-sky-300 hover:bg-sky-500/10 px-6 py-3 rounded font-bold transition-all">
                   📞 {PHONE}
                 </a>
               </div>
