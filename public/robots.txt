@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://coolpointjaipur.in/sitemap.xml
+Sitemap: https://www.coolbreeze.club/sitemap.xml
