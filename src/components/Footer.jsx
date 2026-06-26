@@ -1,4 +1,5 @@
 import { COMPANY, EMAIL, NAV_LINKS, PHONE, SERVICES_DATA, WHATSAPP } from "../data/siteData";
+import { trackPhoneCall } from "../utils/googleAds";
 
 export default function Footer({ setPage }) {
   return (
@@ -51,7 +52,7 @@ export default function Footer({ setPage }) {
             <ul className="space-y-4 text-sm">
               <li>
                 <div className="text-white/40 text-xs mb-0.5">Phone</div>
-                <a href={`tel:${PHONE}`} className="text-white/80 hover:text-[#12aeb5] font-semibold">{PHONE}</a>
+                <a href={`tel:${PHONE}`} onClick={(e) => { e.preventDefault(); trackPhoneCall(`tel:${PHONE}`); }} className="text-white/80 hover:text-[#12aeb5] font-semibold">{PHONE}</a>
               </li>
               <li>
                 <div className="text-white/40 text-xs mb-0.5">WhatsApp</div>

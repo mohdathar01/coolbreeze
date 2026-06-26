@@ -60,7 +60,13 @@ export default function ContactPage({ setPage }) {
                   <div>
                     <div className="text-slate-500 text-xs mb-0.5">{card.label}</div>
                     {card.link ? (
-                      <a href={card.link} target={card.link.startsWith("http") ? "_blank" : undefined} rel="noreferrer" className="text-[#26333b] font-semibold text-sm hover:text-sky-400 transition-colors">
+                      <a
+                        href={card.link}
+                        target={card.link.startsWith("http") ? "_blank" : undefined}
+                        rel="noreferrer"
+                        onClick={card.link.startsWith("tel:") ? (e) => { e.preventDefault(); trackPhoneCall(card.link); } : undefined}
+                        className="text-[#26333b] font-semibold text-sm hover:text-sky-400 transition-colors"
+                      >
                         {card.value}
                       </a>
                     ) : (

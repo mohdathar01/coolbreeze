@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { PHONE, WHATSAPP, NAV_LINKS } from "../data/siteData";
+import { trackPhoneCall } from "../utils/googleAds";
 
 export default function Navbar({ activePage, setPage }) {
   const [scrolled, setScrolled] = useState(false);
@@ -23,7 +24,7 @@ export default function Navbar({ activePage, setPage }) {
           </div> */}
           <div className="flex items-center gap-8">
             <span><span className="text-[#12aeb5] font-bold">Address</span> Jaipur, Rajasthan</span>
-            <a href={`tel:${PHONE}`} className="hover:text-[#12aeb5] transition-colors"><span className="text-[#12aeb5] font-bold">Call Now</span> {PHONE}</a>
+            <a href={`tel:${PHONE}`} onClick={(e) => { e.preventDefault(); trackPhoneCall(`tel:${PHONE}`); }} className="hover:text-[#12aeb5] transition-colors"><span className="text-[#12aeb5] font-bold">Call Now</span> {PHONE}</a>
             <span><span className="text-[#12aeb5] font-bold">Open Hours</span> Mon-Sat: 9am - 6pm</span>
           </div>
         </div>
